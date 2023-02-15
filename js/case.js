@@ -23,9 +23,11 @@ function updateCaseTotalPrice(caseInputValue){
 document.getElementById('btn-case-plus').addEventListener('click', function(){
     const caseInputValue = updateCase(true);
     updateCaseTotalPrice(caseInputValue);
+    getSubTotal();
 })
 
 document.getElementById('btn-case-minus').addEventListener('click', function(){
     const caseInputValue = updateCase(false);
     updateCaseTotalPrice(caseInputValue);
+    getSubTotal();
 })

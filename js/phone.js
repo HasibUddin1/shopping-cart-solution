@@ -14,11 +14,20 @@ function updatePhoneAmount(isIncrease){
     return phoneAmount;
 }
 
+function updatePhonePrice(phoneInputField){
+    const phoneTotalPriceElement = document.getElementById('phone-total-price');
+    const phoneTotalPrice = phoneInputField * 1219;
+    phoneTotalPriceElement.innerText = phoneTotalPrice;
+}
 
 document.getElementById('btn-phone-plus').addEventListener('click', function(){
     const phoneInputField = updatePhoneAmount(true);
+    updatePhonePrice(phoneInputField);
+    getSubTotal();
 })
 
 document.getElementById('btn-phone-minus').addEventListener('click', function(){
     const phoneInputField = updatePhoneAmount(false);
+    updatePhonePrice(phoneInputField);
+    getSubTotal();
 })
